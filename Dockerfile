@@ -33,16 +33,16 @@ RUN     apt-get autoclean && \
         apt-get autoremove && \
         rm -rf /var/lib/apt/lists/* && \
         # Download Minecraft Server components
-        wget http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/mc.jar
+        wget -q http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/mc.jar
         
-ADD	wget http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/world.zip
+ADD	wget -q http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/world.zip
 	
 
 CMD echo eula=true > /data/eula.txt && java -jar /spigot-1.7.10-R0.1-SNAPSHOTBuild1646.jar
-
+RUN	kill java -9
 	rm -rf world
-	rm -r server.properties
-	wget http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/server.properties
+	rm server.properties
+	wget -q http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/server.properties
 	unzip world.zip
 CMD echo eula=true > /data/eula.txt && java -jar /spigot-1.7.10-R0.1-SNAPSHOTBuild1646.jar
 
