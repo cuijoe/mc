@@ -47,8 +47,8 @@ VOLUME /data
 EXPOSE 25565
 #Automatically accept Minecraft EULA, and start Minecraft server
 CMD echo eula=true > /data/eula.txt && java -jar /spigot-1.7.10-R0.1-SNAPSHOTBuild1646.jar
-Ctrl+c
-rm -r world
+
+rm -rf world
 wget unzip
 unzip world.zip
 CMD echo eula=true > /data/eula.txt && java -jar /spigot-1.7.10-R0.1-SNAPSHOTBuild1646.jar
