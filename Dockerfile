@@ -1,7 +1,19 @@
+
+# Minecraft 1.8.8 Dockerfile - Example with notes
+
+
+# Use the offical Debian Docker image with a specified version tag, Wheezy, so not all
+# versions of Debian images are downloaded.
+FROM debian:wheezy
+MAINTAINER qida <sunqida@foxmail.com>
+
 # Use APT (Advanced Packaging Tool) built in the Linux distro to download Java, a dependency
 # to run Minecraft.
 RUN     apt-get -y update && \
         apt-get -y install openjdk-7-jre-headless wget
+RUN     apt-get -y update 
+        apt-get -y install openjdk-7-jre-headless 
+        apt-get -y install wget
 
 RUN     apt-get -y install locales && \
         sed -i 's/# zh_CN.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/' /etc/locale.gen && \
@@ -19,6 +31,8 @@ RUN     apt-get -y install locales && \
 # 设置时区
 ENV     TZ "PRC"
 
+
+
         # Download Minecraft Server components
         wget http://getspigot.org/spigot/spigot-1.7.10-R0.1-SNAPSHOTBuild1646.jar
 	wget http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/mc.sh
@@ -34,7 +48,7 @@ VOLUME /data
 EXPOSE 25565
 #Automatically accept Minecraft EULA, and start Minecraft server
 CMD echo eula=true > /data/eula.txt && java -jar /spigot-1.7.10-R0.1-SNAPSHOTBuild1646.jar
-
+kill java -9
 rm -rf world
 wget unzip
 unzip world.zip
