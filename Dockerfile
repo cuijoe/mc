@@ -9,7 +9,7 @@ MAINTAINER qida <sunqida@foxmail.com>
 # Use APT (Advanced Packaging Tool) built in the Linux distro to download Java, a dependency
 # to run Minecraft.
 RUN     apt-get -y update && \
-        apt-get -y install openjdk-7-jre-headless wget
+        apt-get -y install openjdk-7-jre-headless wget unzip
 
 RUN     apt-get -y install locales && \
         sed -i 's/# zh_CN.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/' /etc/locale.gen && \
@@ -36,12 +36,13 @@ RUN     apt-get autoclean && \
         wget http://getspigot.org/spigot/spigot-1.7.10-R0.1-SNAPSHOTBuild1646.jar
 	wget http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/mc.sh
 	wget http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/world.zip
-	wget http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/server.properties	
+	
 
 CMD echo eula=true > /data/eula.txt && java -jar /spigot-1.7.10-R0.1-SNAPSHOTBuild1646.jar
 RUN	kill java -9
 	rm -rf world
-	wget unzip
+	rm -r server.properties
+	wget http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/server.properties
 	unzip world.zip
 CMD echo eula=true > /data/eula.txt && java -jar /spigot-1.7.10-R0.1-SNAPSHOTBuild1646.jar
 
