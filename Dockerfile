@@ -36,13 +36,13 @@ RUN     apt-get autoclean && \
         wget http://getspigot.org/spigot/spigot-1.7.10-R0.1-SNAPSHOTBuild1646.jar
 	wget http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/mc.sh
 	wget http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/world.zip
-		
+	wget http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/server.properties	
 
 CMD echo eula=true > /data/eula.txt && java -jar /spigot-1.7.10-R0.1-SNAPSHOTBuild1646.jar
-kill java -9
-rm -rf world
-wget unzip
-unzip world.zip
+RUN	kill java -9
+	rm -rf world
+	wget unzip
+	unzip world.zip
 CMD echo eula=true > /data/eula.txt && java -jar /spigot-1.7.10-R0.1-SNAPSHOTBuild1646.jar
 
 
