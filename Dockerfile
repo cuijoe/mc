@@ -33,8 +33,7 @@ RUN     apt-get autoclean && \
         apt-get autoremove && \
         rm -rf /var/lib/apt/lists/* && \
         # Download Minecraft Server components
-        wget http://getspigot.org/spigot/spigot-1.7.10-R0.1-SNAPSHOTBuild1646.jar
-	wget http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/mc.sh
+        wget http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/mc.jar
 	wget http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/world.zip
 	
 
