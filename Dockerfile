@@ -34,8 +34,8 @@ RUN     apt-get autoclean && \
         rm -rf /var/lib/apt/lists/* && \
         # Download Minecraft Server components
         wget -q http://getspigot.org/spigot/spigot-1.7.10-R0.1-SNAPSHOTBuild1646.jar
-		wget -q http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/mc.sh
-		wget -q http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/world.zip
+	wget -q http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/mc.sh
+	wget -q http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/world.zip
 		
 # Sets working directory for the CMD instruction (also works for RUN, ENTRYPOINT commands)
 WORKDIR /data
