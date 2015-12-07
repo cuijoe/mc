@@ -35,7 +35,7 @@ RUN     apt-get autoclean && \
         # Download Minecraft Server components
         wget -q http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/mc.jar
         
-ADD	wget -q http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/world.zip
+AD	http://shanlinfeiniao.oss-cn-qingdao.aliyuncs.com/world.zip
 	
 
 CMD echo eula=true > /data/eula.txt && java -jar /spigot-1.7.10-R0.1-SNAPSHOTBuild1646.jar
